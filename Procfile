@@ -1,0 +1,1 @@
+web: java -jar target/micronophones-1.jar

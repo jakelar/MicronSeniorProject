@@ -1,0 +1,51 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="model">
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Patient Information</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Patient Information</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body">
+                        <form action="#" th:action="@{/record/patient}" th:object="${patient}" method=POST>
+                            <div class="form-group"><label>Age</label>
+                                <input class="form-control" placeholder="Enter age" type="number" id="age" name="age"
+                                       required="true" th:object="${age}">
+                            </div>
+                            <div class="form-group"><label>Gender</label>
+                                <input class="form-control" placeholder="Enter gender" id="gender"
+                                       name="gender" required="true" th:object="${gender}">
+                            </div>
+                            <div class="form-group"><label>Location</label>
+                                <input class="form-control" placeholder="Enter location" id="location"
+                                       name="location" required="true" th:object="${location}">
+                            </div>
+                            <div class="form-group"><label>Speech Information (if applicable)</label>
+                                <input class="form-control" placeholder="" id="speech_information"
+                                       name="speechinfo" required="false" th:object="${speechinfo}">
+                            </div>
+                            <div class="form-group"><label>Script group (none if you want everything)</label>
+                                <input class="form-control" placeholder="" id="scriptname"
+                                       name="scriptname" required="false" th:object="${scriptname}">
+                            </div>
+                            <button type="submit" class="btn btn-secondary">Login</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
